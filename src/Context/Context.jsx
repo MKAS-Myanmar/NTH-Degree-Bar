@@ -1,9 +1,28 @@
-import { createContext } from "react";
+import { createContext, useEffect, useMemo, useState } from "react";
 
 export const StateContext = createContext()
 
 
  const StateContextProvider = ({children}) => {
+
+
+  
+
+  const [theme, setTheme] = useState(localStorage.getItem('theme')== 'dark'?'dark': 'light');
+
+
+
+  useEffect(() => {
+    localStorage.setItem('theme',  theme)
+  }, [theme])
+
+ 
+ 
+
+
+
+  
+
 
     const categories = [
         {
@@ -72,7 +91,7 @@ export const StateContext = createContext()
         }
     ]
 
-    const data = { categories,menus}
+    const data = { categories,menus,theme, setTheme}
     return (
         <StateContext.Provider value={data}>
             {children}

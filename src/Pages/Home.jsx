@@ -3,8 +3,10 @@ import HomeMenu from "../Components/HomeCategory";
 import NavBar from "../Components/NavBar";
 import { StateContext } from "../Context/Context";
 
+// import Swiper core and required modules
+import { Navigation, Pagination, Scrollbar, A11y } from 'swiper/modules';
 
-import { Swiper, SwiperSlide, useSwiper } from "swiper/react";
+import { Swiper, SwiperSlide } from "swiper/react";
 
 // Import Swiper styles
 import "swiper/css";
@@ -28,7 +30,7 @@ const Home = () => {
         <div className=" h-[95vh] w-full  absolute top-0 left-0 z-40  bg-black opacity-70"></div>
 
         <div className="container mx-auto">
-          <h1 className="relative z-50">Welcome to NTH Degree Bar</h1>
+          <h1 className="relative md:z-50 z-40 font-header text-white">Welcome to NTH Degree Bar</h1>
         </div>
       </header>
 
@@ -36,18 +38,18 @@ const Home = () => {
         <h1 className="mb-6">Menu categories</h1>
         <div className="">
           <Swiper
+           modules={[Navigation, Pagination, Scrollbar, A11y]}
             spaceBetween={50}
+            loop={true}
             slidesPerView={3}
-            // navigation={{
-            //   prevEl: ".prev",
-            //   nextEl: ".next",
-            // }}
-            navigation={true}
-            pagination={{clickable: 'true'}}
+            navigation={{
+              prevEl: ".prev",
+              nextEl: ".next",
+            }}
 
 
             // onSlideChange={() => console.log("slide change")}
-            // onSwiper={(swiper) => swiperRef.current= swiper}
+            // onSwiper={(swiper) => console.log(swiper)}
           >
             {categories?.map((category) => (
               <SwiperSlide key={category.id}>

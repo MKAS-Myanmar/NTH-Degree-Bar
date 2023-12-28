@@ -1,5 +1,6 @@
 /** @type {import('tailwindcss').Config} */
 export default {
+  darkMode: "class",
   content: ["./src/**/*.{js,jsx,ts,tsx}"],
   theme: {
     screens: {
@@ -26,8 +27,11 @@ export default {
           "home1": "url('/home1.jpg')",
       },
       fontFamily: {
-        header: ["var(--font-roboto)"],
-        para: ["var(--font-montserrat)"],
+        header: ['Roboto', 'sans-serif'],
+        para: ['Montserrat', 'sans-serif'],
+      },
+      colors: {
+        'white': '#fff',
       },
     },
   },
