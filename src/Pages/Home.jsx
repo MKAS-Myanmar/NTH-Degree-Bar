@@ -1,15 +1,23 @@
-import { useContext } from "react";
+import { useContext, useRef } from "react";
 import HomeMenu from "../Components/HomeCategory";
 import NavBar from "../Components/NavBar";
 import { StateContext } from "../Context/Context";
 
-import { Swiper, SwiperSlide } from "swiper/react";
+
+import { Swiper, SwiperSlide, useSwiper } from "swiper/react";
 
 // Import Swiper styles
 import "swiper/css";
+import "swiper/css/bundle";
+import "swiper/css/pagination";
+import "swiper/css/navigation";
+
+import { GrFormPrevious, GrFormNext } from "react-icons/gr";
 
 const Home = () => {
   const { categories } = useContext(StateContext);
+
+  
 
   return (
     <div className="">
@@ -24,30 +32,35 @@ const Home = () => {
         </div>
       </header>
 
-      
-
       <main className="container mx-auto py-20">
         <h1 className="mb-6">Menu categories</h1>
         <div className="">
-
-        <Swiper
-        spaceBetween={50}
-        slidesPerView={3}
-        onSlideChange={() => console.log("slide change")}
-        onSwiper={(swiper) => console.log(swiper)}
-      >
-        {categories?.map((category) => (
-            
-        <SwiperSlide key={category.id}>
-          <HomeMenu  category={category} />
-        </SwiperSlide>
-          ))}
-        
-      </Swiper>
+          <Swiper
+            spaceBetween={50}
+            slidesPerView={3}
+            // navigation={{
+            //   prevEl: ".prev",
+            //   nextEl: ".next",
+            // }}
+            navigation={true}
+            pagination={{clickable: 'true'}}
 
 
-          
+            // onSlideChange={() => console.log("slide change")}
+            // onSwiper={(swiper) => swiperRef.current= swiper}
+          >
+            {categories?.map((category) => (
+              <SwiperSlide key={category.id}>
+                <HomeMenu category={category} />
+              </SwiperSlide>
+            ))}
+          </Swiper>
         </div>
+        <div className="flex items-center justify-end ">
+          <GrFormPrevious  size={40} className="prev text-lg cursor-pointer" />
+          <GrFormNext size={40} className="next text-lg cursor-pointer" />
+        </div>
+
       </main>
     </div>
   );
