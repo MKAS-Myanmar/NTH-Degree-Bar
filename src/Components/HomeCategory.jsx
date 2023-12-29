@@ -1,7 +1,7 @@
 import { useNavigate } from "react-router-dom"
 
 
-const HomeMenu = ({category}) => {
+const HomeCategory = ({category}) => {
 
     const nav= useNavigate()
 
@@ -10,7 +10,7 @@ const HomeMenu = ({category}) => {
 
 
   return (
-    <div onClick={() => nav(`/menus/${categoryName}`)} className="rounded-md text-center cursor-pointer  border border-1 border-gray-700">
+    <div onClick={() => nav(`/menus/${categoryName}`)} className="rounded-md text-center cursor-pointer w-60  border border-1 border-gray-700">
         
 
         <div className="w-full h-60 object-cover">
@@ -21,4 +21,4 @@ const HomeMenu = ({category}) => {
   )
 }
 
-export default HomeMenu
+export default HomeCategory

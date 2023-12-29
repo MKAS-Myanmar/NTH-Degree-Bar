@@ -1,11 +1,11 @@
 import { Route, Routes } from "react-router-dom"
 import Home from "./Pages/Home"
 import Menus from "./Pages/Menus"
-import News from "./Pages/News"
 import Contact from "./Pages/Contact"
 import AllMenus from "./Pages/AllMenus"
 import { useContext, useEffect } from "react"
 import { StateContext } from "./Context/Context"
+import Activity from "./Pages/Activity"
 
 const App = () => {
   const { theme } = useContext(StateContext);
@@ -26,7 +26,7 @@ const App = () => {
       <Route path="/" element={<Home/>}/>
       <Route path="/menus/" element={<AllMenus/>}/>
       <Route path="/menus/:name" element={<Menus/>}/>
-      <Route path="/news" element={<News/>}/>
+      <Route path="/activity" element={<Activity/>}/>
       <Route path="/contact" element={<Contact/>}/>
 
     </Routes>

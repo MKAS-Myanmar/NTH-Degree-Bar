@@ -30,6 +30,7 @@ export const StateContext = createContext()
         {
             id: 1,
             name: 'food',
+            parentCategory: 'food',
             image: 'https://i.pinimg.com/236x/01/a8/b2/01a8b20022d3ac8d1c0ad960e7b67466.jpg'
         },
         {
@@ -40,16 +41,19 @@ export const StateContext = createContext()
         {
             id: 3,
             name: 'juice',
+            parentCategory: 'drink',
             image: 'https://i.pinimg.com/236x/01/a8/b2/01a8b20022d3ac8d1c0ad960e7b67466.jpg'
         },
         {
             id: 4,
             name: 'rice',
+            parentCategory: 'food',
             image: 'https://i.pinimg.com/236x/01/a8/b2/01a8b20022d3ac8d1c0ad960e7b67466.jpg'
         },
         {
             id: 5,
             name: 'fruit',
+            parentCategory: 'food',
             image: 'https://i.pinimg.com/236x/01/a8/b2/01a8b20022d3ac8d1c0ad960e7b67466.jpg'
         }
     ]

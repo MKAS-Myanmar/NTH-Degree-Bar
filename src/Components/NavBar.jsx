@@ -52,8 +52,8 @@ const NavBar = () => {
           <li>Menus</li>
         </Link>
 
-        <Link to={"/news"}>
-          <li>News</li>
+        <Link to={"/activity"}>
+          <li>Activity</li>
         </Link>
 
         <Link to={"/contact"}>

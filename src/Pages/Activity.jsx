@@ -1,13 +1,13 @@
 import NavBar from "../Components/NavBar"
 
-const News = () => {
+const Activity = () => {
   return (
     <div>
         <NavBar/>
 
-        <h1>News</h1>
+        <h1>Activity</h1>
     </div>
   )
 }
 
-export default News
+export default Activity

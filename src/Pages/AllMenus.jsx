@@ -5,6 +5,10 @@ import MenuItem from '../Components/MenuItem'
 
 const AllMenus = () => {
 
+ 
+
+  
+
     const {menus} = useContext(StateContext)
   return (
     <div className='container mx-auto'>
