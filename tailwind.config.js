@@ -32,13 +32,15 @@ export default {
       },
       colors: {
         //light theme
-        'white': '#fff',
+        'light-bg': '#fafafa',
+        'white': '#fafafa',
 
 
 
 
 
         //dark theme
+        'dark-bg': '#121212',
         'dark': '#121212'
       },
     },

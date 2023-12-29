@@ -2,7 +2,7 @@ import React from "react";
 
 const MenuItem = ({ menuItem }) => {
   return (
-    <div className="basis-[23%] border border-1 border-gray-600  rounded-md">
+    <div className="basis-[23%] border border-1 border-gray-600  rounded-md text-dark dark:text-white">
       <div className="w-full h-[13rem] rounded-md overflow-hidden">
         <img src={menuItem?.image} className=" relative w-full h-full object-cover rounded-md" alt="" />
       </div>

@@ -13,7 +13,7 @@ const Menus = () => {
 
 
   return (
-    <div className="bg-white dark:bg-dark  min-h-screen w-screen">
+    <div className="bg-white dark:bg-dark  min-h-screen w-screen  text-dark dark:text-white">
       <NavBar/>
 
       <div className="mb-6">

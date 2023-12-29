@@ -5,7 +5,6 @@ export const StateContext = createContext()
 
  const StateContextProvider = ({children}) => {
 
-    const defaultDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
 
   
 
@@ -16,6 +15,8 @@ export const StateContext = createContext()
   useEffect(() => {
     localStorage.setItem('theme',  theme)
   }, [theme])
+
+  const [currentCategory, setCurrentCategory] = useState('all')
 
  
  
@@ -92,7 +93,7 @@ export const StateContext = createContext()
         }
     ]
 
-    const data = { categories,menus,theme, setTheme}
+    const data = { categories,menus,theme, setTheme,currentCategory, setCurrentCategory}
     return (
         <StateContext.Provider value={data}>
             {children}

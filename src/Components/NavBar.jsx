@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import logoWhite from "/image/logoWhite.png";
+import logoBlack from "/image/logoBlack.png";
 import { CiDark } from "react-icons/ci";
 import { MdOutlineLightMode } from "react-icons/md";
 import { useContext, useEffect, useState } from "react";
@@ -37,14 +38,14 @@ const NavBar = () => {
   return (
     <nav className="flex items-center justify-between py-4 container mx-auto relative z-50 dark:text-white text-dark">
       <Link to={"/"}>
-        <div className="logo w-8 md:w-16 h-auto cursor-pointer">
-          <img src={logoWhite} alt="" />
+        <div className="logo w-8 md:w-12 h-auto cursor-pointer">
+          <img src={theme == 'dark'?  logoWhite: logoBlack} className="w-full h-full object-cover relative" alt="" />
         </div>
       </Link>
 
-      <ul className=" items-center flex-1 justify-end gap-6 hidden md:flex  ">
+      <ul className=" items-center flex-1 justify-end gap-6 hidden md:flex  text-dark dark:text-white ">
         <Link to={"/"}>
-          <li className="text-dark">Home</li>
+          <li className="text-inherit">Home</li>
         </Link>
 
         <Link to={"/menus"}>
@@ -59,7 +60,7 @@ const NavBar = () => {
           <li>Contact</li>
         </Link>
       </ul>
-      <div className="ml-5 border border-1 border-white rounded-full hidden md:block">
+      <div className="ml-5 border border-1 border-dark dark:border-white rounded-full hidden md:block">
         <div
           onClick={toggleTheme}
           className={` items-center  gap-3  w-12 h-6 cursor-pointer flex relative  ${
@@ -67,7 +68,7 @@ const NavBar = () => {
           }`}
         >
           {theme == "dark" ? (
-            <CiDark size={25} />
+            <CiDark  size={25} />
           ) : (
             <MdOutlineLightMode size={25} />
           )}
