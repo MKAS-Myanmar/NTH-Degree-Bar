@@ -13,10 +13,10 @@ const Menus = () => {
 
 
   return (
-    <div className="container mx-auto">
+    <div className="bg-white dark:bg-dark  min-h-screen w-screen">
       <NavBar/>
 
-      <div className="">
+      <div className="mb-6">
         <h1 className="font-semibold text-xl"> <span className="cap capitalize">{name}</span> Category</h1>
       </div>
 
@@ -27,7 +27,7 @@ const Menus = () => {
           <MenuItem key={menuItem.id} menuItem={menuItem} />
         ))
       ) : (
-        <h1>No Menu for this category</h1>
+        <h1 className="dark:text-white text-red-500">No Menu for this category</h1>
       )}
     </div>
     </div>

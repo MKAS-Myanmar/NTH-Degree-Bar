@@ -9,6 +9,8 @@ import { StateContext } from "./Context/Context"
 
 const App = () => {
   const { theme } = useContext(StateContext);
+
+
   useEffect(() => {
     if (theme === "dark") {
       document.documentElement.classList.add("dark");
@@ -17,6 +19,7 @@ const App = () => {
 
     }
   }, [theme]);
+
 
   return (
     <Routes>

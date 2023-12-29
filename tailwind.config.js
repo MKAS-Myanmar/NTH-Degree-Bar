@@ -31,7 +31,15 @@ export default {
         para: ['Montserrat', 'sans-serif'],
       },
       colors: {
+        //light theme
         'white': '#fff',
+
+
+
+
+
+        //dark theme
+        'dark': '#121212'
       },
     },
   },

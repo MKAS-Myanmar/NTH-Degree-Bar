@@ -5,6 +5,7 @@ export const StateContext = createContext()
 
  const StateContextProvider = ({children}) => {
 
+    const defaultDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
 
   
 

@@ -35,16 +35,16 @@ const NavBar = () => {
 
 
   return (
-    <nav className="flex items-center justify-between py-4 container mx-auto relative z-50">
+    <nav className="flex items-center justify-between py-4 container mx-auto relative z-50 dark:text-white text-dark">
       <Link to={"/"}>
         <div className="logo w-8 md:w-16 h-auto cursor-pointer">
           <img src={logoWhite} alt="" />
         </div>
       </Link>
 
-      <ul className=" items-center flex-1 justify-end gap-6 hidden md:flex">
+      <ul className=" items-center flex-1 justify-end gap-6 hidden md:flex  ">
         <Link to={"/"}>
-          <li>Home</li>
+          <li className="text-dark">Home</li>
         </Link>
 
         <Link to={"/menus"}>

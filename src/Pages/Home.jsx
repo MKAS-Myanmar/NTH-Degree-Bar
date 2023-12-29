@@ -22,7 +22,7 @@ const Home = () => {
   
 
   return (
-    <div className="">
+    <div className="bg-white dark:bg-dark">
       <header
         className={` bg-home1 bg-cover bg-center bg-no-repeat h-[95vh] relative z-30`}
       >
@@ -30,7 +30,7 @@ const Home = () => {
         <div className=" h-[95vh] w-full  absolute top-0 left-0 z-40  bg-black opacity-70"></div>
 
         <div className="container mx-auto">
-          <h1 className="relative md:z-50 z-40 font-header text-white">Welcome to NTH Degree Bar</h1>
+          <h1 className="relative md:z-50 z-40 font-header text-white ">Welcome to NTH Degree Bar</h1>
         </div>
       </header>
 
@@ -41,7 +41,7 @@ const Home = () => {
            modules={[Navigation, Pagination, Scrollbar, A11y]}
             spaceBetween={50}
             loop={true}
-            slidesPerView={3}
+            slidesPerView={4}
             navigation={{
               prevEl: ".prev",
               nextEl: ".next",
