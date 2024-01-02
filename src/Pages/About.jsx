@@ -14,7 +14,7 @@ const About = () => {
         <main className=''>
           <div className={` bg-aboutbg bg-cover`}>
             {/* <img src={aboutbg} alt="" className=" absolute  " /> */}
-            <div className='bg-dark relative top-[250px] md:top-[350px] xl:top-[450px] text-center z-10 h-[70vh]'>
+            <div className='bg-dark dark:text-white relative top-[250px] md:top-[350px] xl:top-[450px] text-center z-10 h-[70vh]'>
              
               <h1 className=' text-[3rem] font-semibold relative top-[-45px] italic'>ABOUT</h1>
                     {/* <----Group of social icons---> */}
