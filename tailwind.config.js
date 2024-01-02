@@ -25,6 +25,7 @@ export default {
         "gradient-conic":
           "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
           "home1": "url('/home1.jpg')",
+          "aboutbg": "url('/image/aboutbg.jpg')"
       },
       fontFamily: {
         header: ['Roboto', 'sans-serif'],
