@@ -59,6 +59,9 @@ const NavBar = () => {
         <Link to={"/contact"}>
           <li>Contact</li>
         </Link>
+        <Link to={"/about"}>
+          <li>About</li>
+        </Link>
       </ul>
       <div className="ml-5 border border-1 border-dark dark:border-white rounded-full hidden md:block">
         <div

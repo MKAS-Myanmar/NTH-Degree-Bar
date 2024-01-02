@@ -6,6 +6,7 @@ import AllMenus from "./Pages/AllMenus"
 import { useContext, useEffect } from "react"
 import { StateContext } from "./Context/Context"
 import Activity from "./Pages/Activity"
+import About from "./Pages/About"
 
 const App = () => {
   const { theme } = useContext(StateContext);
@@ -24,6 +25,7 @@ const App = () => {
   return (
     <Routes>
       <Route path="/" element={<Home/>}/>
+      <Route path="/about" element={<About/>}/>
       <Route path="/menus/" element={<AllMenus/>}/>
       <Route path="/menus/:name" element={<Menus/>}/>
       <Route path="/activity" element={<Activity/>}/>

@@ -15,6 +15,7 @@ import "swiper/css/pagination";
 import "swiper/css/navigation";
 
 import { GrFormPrevious, GrFormNext } from "react-icons/gr";
+import { Link } from "react-router-dom";
 
 const Home = () => {
   const { categories, currentCategory, setCurrentCategory } =
@@ -54,6 +55,7 @@ const Home = () => {
       : filtredCategory.length;
 
 
+
   return (
     <div className="bg-white dark:bg-dark text-white dark:text-dark">
       <header
@@ -62,15 +64,17 @@ const Home = () => {
         <NavBar />
         <div className=" h-[95vh] w-full  absolute top-0 left-0 z-40  bg-black opacity-70"></div>
 
-        <div className="container mx-auto  dark:text-white text-dark">
+        <div className="container mx-auto dark:text-white text-dark mt-6 ">
           <h1 className="relative md:z-50 z-40 font-header dark:text-white text-dark">
             Welcome to NTH Degree Bar
           </h1>
           <p className=" dark:text-white text-dark z-40 relative">
-            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Natus provident, accusantium vel nulla veritatis, dolor omnis ad quis modi nihil quaerat praesentium ullam eligendi porro, voluptatum possimus sed nemo est.
+              Discover the realm of whiskies, wines, and delectable culinary pleasures at Nth Degree Restaurant.
           </p>
           <div className="">
+            <Link to={"/about"}>
             <button>About</button>
+            </Link>
           </div>
         </div>
       </header>
