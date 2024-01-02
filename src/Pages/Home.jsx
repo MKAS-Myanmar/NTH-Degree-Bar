@@ -2,6 +2,7 @@ import { useContext, useRef } from "react";
 import HomeCategory from "../Components/HomeCategory";
 import NavBar from "../Components/NavBar";
 import { StateContext } from "../Context/Context";
+import "../../src/home.css";
 
 // import Swiper core and required modules
 import { Navigation, Pagination, Scrollbar, A11y } from "swiper/modules";
@@ -15,10 +16,15 @@ import "swiper/css/pagination";
 import "swiper/css/navigation";
 
 import { GrFormPrevious, GrFormNext } from "react-icons/gr";
+
 import { Link } from "react-router-dom";
 
+import EventComponent from "../Components/EventComponent";
+import ContactComponent from "../Components/ContactComponent";
+
+
 const Home = () => {
-  const { categories, currentCategory, setCurrentCategory } =
+  const { categories, currentCategory, setCurrentCategory, events } =
     useContext(StateContext);
 
   const filtredCategory = categories.filter(
@@ -55,7 +61,6 @@ const Home = () => {
       : filtredCategory.length;
 
 
-
   return (
     <div className="bg-white dark:bg-dark text-white dark:text-dark">
       <header
@@ -69,7 +74,9 @@ const Home = () => {
             Welcome to NTH Degree Bar
           </h1>
           <p className=" dark:text-white text-dark z-40 relative">
+
               Discover the realm of whiskies, wines, and delectable culinary pleasures at Nth Degree Restaurant.
+
           </p>
           <div className="">
             <Link to={"/about"}>
@@ -80,7 +87,6 @@ const Home = () => {
       </header>
 
       <main className="container mx-auto py-20  text-dark dark:text-white">
-      
         <div className="flex items-center justify-start gap-10 mb-6">
           <h1 className=" text-dark dark:text-white">Menu categories</h1>
 
@@ -112,7 +118,6 @@ const Home = () => {
         </div>
         <div className="">
           <Swiper
-          className="flex !justify-start"
             modules={[Navigation, Pagination, Scrollbar, A11y]}
             spaceBetween={20}
             loop={true}
@@ -127,7 +132,7 @@ const Home = () => {
           >
             {currentCategory == "all" ? (
               categories?.map((category) => (
-                <SwiperSlide  key={category.id}>
+                <SwiperSlide key={category.id}>
                   <HomeCategory category={category} />
                 </SwiperSlide>
               ))
@@ -145,10 +150,49 @@ const Home = () => {
           </Swiper>
         </div>
         <div className="flex items-center justify-end gap-4">
-          <GrFormPrevious size={40} className="prev text-lg cursor-pointer text-dark dark:text-white" />
-          <GrFormNext size={40} className="next text-lg cursor-pointer text-dark dark:text-white" />
+          <GrFormPrevious
+            size={40}
+            className="prev text-lg cursor-pointer text-dark dark:text-white"
+          />
+          <GrFormNext
+            size={40}
+            className="next text-lg cursor-pointer text-dark dark:text-white"
+          />
         </div>
-        
+
+        <div className="">
+          <h1>Our Weekly Activity</h1>
+
+          <div className="mt-8">
+            <Swiper
+              modules={[Navigation, Pagination, Scrollbar, A11y]}
+              spaceBetween={20}
+              loop={true}
+              slidesPerView={1}
+              pagination={{
+                el: ".swiper-pagination",
+                clickable: true,
+
+              }}
+
+              // onSlideChange={() => console.log("slide change")}
+              // onSwiper={(swiper) => console.log(swiper)}
+            >
+              {events?.map((event) => (
+                <SwiperSlide key={event?.id}>
+                  <EventComponent key={event.id} event={event} />
+                </SwiperSlide>
+              ))}
+            </Swiper>
+
+            <div className="swiper-pagination">test</div>
+          </div>
+        </div>
+
+
+        <div className="">
+          <ContactComponent/>
+        </div>
       </main>
     </div>
   );

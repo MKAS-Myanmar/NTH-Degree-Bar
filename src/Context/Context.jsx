@@ -97,7 +97,33 @@ export const StateContext = createContext()
         }
     ]
 
-    const data = { categories,menus,theme, setTheme,currentCategory, setCurrentCategory}
+
+    const events = [
+        {
+            id: 1,
+            name: 'New Year Events',
+            fromDate: '11.1.2004',
+            toDate: '30.1.2004',
+            about: 'This is testing evnets by Wai Min Hein',
+            location: 'Maggin str, Kyauk Myaung, Tamwe Township',
+            numberOfDay : 19,
+            image: 'https://i.pinimg.com/236x/87/82/bb/8782bbe2490d9504bec43ed5bffd7ed9.jpg'
+
+        },
+        {
+            id: 2,
+            name: 'National Independence  Day Events',
+            fromDate: '4.1.2004',
+            toDate: '30.1.2004',
+            about: 'This is testing evnets by Wai Min Hein',
+            location: 'Maggin str, Kyauk Myaung, Tamwe Township',
+            numberOfDay : 19,
+            image: 'https://i.pinimg.com/564x/7f/fb/90/7ffb90aa5f82ef4e87e0747d098cbe25.jpg'
+
+        }
+    ]
+
+    const data = { categories,menus,theme, setTheme,currentCategory, setCurrentCategory, events}
     return (
         <StateContext.Provider value={data}>
             {children}
