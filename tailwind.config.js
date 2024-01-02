@@ -36,6 +36,9 @@ export default {
         'white': '#fafafa',
 
 
+        'black-opacity-50': '#000',
+
+
 
 
 

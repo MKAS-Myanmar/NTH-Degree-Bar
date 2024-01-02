@@ -1,0 +1,22 @@
+
+.swiper-pagination {
+	position: relative !important;
+
+
+	padding-top: 2rem !important;
+	
+}
+/* .swiper-pagination .swiper-pagination-bullet {
+	width: 3rem !important;
+	height: 3rem !important;
+	border-radius: 1px !important;
+	opacity: 1 !important;
+	background: transparent !important;
+	transition: all .3s;
+	margin: 0 .5rem !important;
+
+}
+.swiper-pagination .swiper-pagination-bullet-active {
+	background: transparent !important;
+	transform: translateY(-13px) scale(1.15);
+} */
