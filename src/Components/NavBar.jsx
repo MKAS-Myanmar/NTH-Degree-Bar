@@ -28,87 +28,96 @@ const NavBar = () => {
 
   const onClickNav = () => setIsNav(!isNav);
 
-  const navVariant = {
-    open: {x:100, transition: {duration: 1}},
-    closed: {x:0, transition: {duration: 1}}
-  }
-  
-
+  // const navVariant = {
+  //   open: {x:100, transition: {duration: 1}},
+  //   closed: {x:0, transition: {duration: 1}}
+  // }
 
   return (
-    <nav className="flex items-center justify-between py-4 container mx-auto relative z-50 dark:text-white text-dark">
-      <Link to={"/"}>
-        <div className="logo w-8 md:w-12 h-auto cursor-pointer">
-          <img src={theme == 'dark'?  logoWhite: logoBlack} className="w-full h-full object-cover relative" alt="" />
-        </div>
-      </Link>
-
-      <ul className=" items-center flex-1 justify-end gap-6 hidden md:flex  text-dark dark:text-white ">
+    <nav className=" py-3  z-50  text-white sticky top-0 navBar bg-[#000000a6]">
+      <div className="container mx-auto flex items-center justify-between">
         <Link to={"/"}>
-          <li className="text-inherit">Home</li>
+          <div className="logo w-8 md:w-12 h-auto cursor-pointer">
+            <img
+              // src={theme == "dark" ? logoWhite : logoBlack}
+              src={logoWhite}
+              className="w-full h-full object-cover relative"
+              alt=""
+            />
+          </div>
         </Link>
 
-        <Link to={"/menus"}>
-          <li>Menus</li>
-        </Link>
-
-        <Link to={"/activity"}>
-          <li>Activity</li>
-        </Link>
-
-        <Link to={"/contact"}>
-          <li>Contact</li>
-        </Link>
-        <Link to={"/about"}>
-          <li>About</li>
-        </Link>
-      </ul>
-      <div className="ml-5 border border-1 border-dark dark:border-white rounded-full hidden md:block">
-        <div
-          onClick={toggleTheme}
-          className={` items-center  gap-3  w-12 h-6 cursor-pointer flex relative  ${
-            theme == "dark" ? "justify-start" : "justify-end"
-          }`}
-        >
-          {theme == "dark" ? (
-            <CiDark  size={25} />
-          ) : (
-            <MdOutlineLightMode size={25} />
-          )}
-        </div>
-      </div>
-
-      {/* Mobile Nav */}
-
-      <motion.div className="block md:hidden">
-        <IoMenu size={20} onClick={onClickNav} className="c cursor-pointer" />
-      </motion.div>
-
-      <motion.div initial={{x:-100}} animate={{x:0}}  className="bg-black  w-1/3 h-screen fixed block md:hidden top-0 left-0 z-[100]">
-        <RxCross2
-          size={20}
-          onClick={onClickNav}
-          className="absolute top-0 right-0"
-        />
-
-        <ul className="">
+        <ul className=" items-center flex-1 justify-end gap-6 hidden md:flex  text-white  ">
           <Link to={"/"}>
-            <li>Home</li>
+            <li className="text-inherit ">Home</li>
           </Link>
 
           <Link to={"/menus"}>
             <li>Menus</li>
           </Link>
 
-          <Link to={"/news"}>
-            <li>News</li>
+          <Link to={"/activity"}>
+            <li>Activity</li>
           </Link>
 
           <Link to={"/contact"}>
             <li>Contact</li>
           </Link>
+          <Link to={"/about"}>
+            <li>About</li>
+          </Link>
         </ul>
-      </motion.div>
+        <div className="ml-5 border border-1 border-dark dark:border-white rounded-full hidden md:block">
+          <div
+            onClick={toggleTheme}
+            className={` items-center  gap-3  w-12 h-6 cursor-pointer flex relative  ${
+              theme == "dark" ? "justify-start" : "justify-end"
+            }`}
+          >
+            {theme == "dark" ? (
+              <CiDark size={25} />
+            ) : (
+              <MdOutlineLightMode size={25} />
+            )}
+          </div>
+        </div>
+
+        {/* Mobile Nav */}
+
+        <motion.div className="block md:hidden">
+          <IoMenu size={20} onClick={onClickNav} className="c cursor-pointer" />
+        </motion.div>
+
+        <motion.div
+          initial={{ x: -100 }}
+          animate={{ x: 0 }}
+          className="bg-black  w-1/3 h-screen fixed block md:hidden top-0 left-0 z-[100]"
+        >
+          <RxCross2
+            size={20}
+            onClick={onClickNav}
+            className="absolute top-0 right-0"
+          />
+
+          <ul className="">
+            <Link to={"/"}>
+              <li>Home</li>
+            </Link>
+
+            <Link to={"/menus"}>
+              <li>Menus</li>
+            </Link>
+
+            <Link to={"/news"}>
+              <li>News</li>
+            </Link>
+
+            <Link to={"/contact"}>
+              <li>Contact</li>
+            </Link>
+          </ul>
+        </motion.div>
+      </div>
     </nav>
   );
 };
