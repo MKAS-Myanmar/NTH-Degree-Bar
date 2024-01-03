@@ -40,7 +40,7 @@ const ContactComponent = () => {
             </div>
             <div className="flex items-center justify-start my-2 gap-2">
               <IoLocationOutline />
-              <p>Inya Lake</p>
+              <p>Inya Lake Hotel</p>
             </div>
           </div>
         </div>
