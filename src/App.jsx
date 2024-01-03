@@ -7,7 +7,6 @@ import { useContext, useEffect } from "react"
 import { StateContext } from "./Context/Context"
 import Activity from "./Pages/Activity"
 import About from "./Pages/About"
-import NavBar from "./Components/NavBar"
 
 const App = () => {
   const { theme } = useContext(StateContext);
@@ -24,10 +23,6 @@ const App = () => {
 
 
   return (
-
-    <div className="">
-      <NavBar/>
-
     <Routes>
       <Route path="/" element={<Home/>}/>
       <Route path="/about" element={<About/>}/>
@@ -37,7 +32,6 @@ const App = () => {
       <Route path="/contact" element={<Contact/>}/>
 
     </Routes>
-    </div>
   )
 }
 
