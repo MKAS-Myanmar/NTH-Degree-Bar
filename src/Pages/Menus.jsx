@@ -11,26 +11,25 @@ const Menus = () => {
 
   const menu = menus.filter((menu) => menu.category == name);
 
+
   return (
     <div className="bg-white dark:bg-dark  min-h-screen w-screen  text-dark dark:text-white">
+      <NavBar/>
+
       <div className="mb-6">
-        <h1 className="font-semibold text-xl">
-          {" "}
-          <span className="cap capitalize">{name}</span> Category
-        </h1>
+        <h1 className="font-semibold text-xl"> <span className="cap capitalize">{name}</span> Category</h1>
       </div>
 
-      <div className="flex items-center justify-start gap-4 ">
-        {menu?.length > 0 ? (
-          menu?.map((menuItem) => (
-            <MenuItem key={menuItem.id} menuItem={menuItem} />
-          ))
-        ) : (
-          <h1 className="dark:text-white text-red-500">
-            No Menu for this category
-          </h1>
-        )}
-      </div>
+
+    <div className="flex items-center justify-start gap-4 ">
+      {menu?.length > 0 ? (
+        menu?.map((menuItem) => (
+          <MenuItem key={menuItem.id} menuItem={menuItem} />
+        ))
+      ) : (
+        <h1 className="dark:text-white text-red-500">No Menu for this category</h1>
+      )}
+    </div>
     </div>
   );
 };

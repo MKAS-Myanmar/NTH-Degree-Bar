@@ -1,4 +1,4 @@
-import { useContext } from "react";
+import { useContext, useRef } from "react";
 import HomeCategory from "../Components/HomeCategory";
 import NavBar from "../Components/NavBar";
 import { StateContext } from "../Context/Context";
@@ -57,32 +57,26 @@ const Home = () => {
 
 
   return (
-    <div className="bg-white dark:bg-dark text-white dark:text-dark relative">
-
-
+    <div className="bg-white dark:bg-dark text-white dark:text-dark">
       <header
+        // className={` bg-home1 bg-cover bg-center bg-no-repeat h-[95vh] relative z-30`}
+      >
         <NavBar />
         <video src={video} loop autoPlay muted className="h-full container mx-auto"></video>
         <div className=" h-[95vh] w-full  absolute top-0 left-0 z-40  bg-black opacity-50"></div>
 
-
-        <div className="container mx-auto text-white ">
-          <div className="pt-[20vh]">
-
-          <h1 className="relative md:z-50 z-40 font-header text-white">
+        <div className="container mx-auto dark:text-white text-dark mt-6 ">
+          <h1 className="relative md:z-50 z-40 font-header dark:text-white text-dark">
             Welcome to NTH Degree Bar
           </h1>
-          <p className="text-white z-40 relative">
-
+          <p className=" dark:text-white text-dark z-40 relative">
               Discover the realm of whiskies, wines, and delectable culinary pleasures at Nth Degree Restaurant.
           </p>
-          <div className="relative z-40">
+          <div className="">
             <Link to={"/about"}>
-            <button className="text-white  z-50">About</button>
+            <button>About</button>
             </Link>
           </div>
-          </div>
-
         </div>
       </header>
 
@@ -92,8 +86,8 @@ const Home = () => {
           <h1 className=" text-dark dark:text-white">Menu categories</h1>
 
           <div className="">
-            <label className=" text-dark dark:text-white pr-3" htmlFor="category">
-              Choose category :
+            <label className=" text-dark dark:text-white" htmlFor="category">
+              Choose category:
             </label>
 
             <select
@@ -157,7 +151,6 @@ const Home = () => {
         </div>
         
       </main>
-
     </div>
   );
 };

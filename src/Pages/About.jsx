@@ -10,8 +10,9 @@ const About = () => {
 
   return (
     <div>
+        <NavBar/>
         <main className=''>
-          <div className={` bg-aboutbg bg-cover mt-[-5rem]`}>
+          <div className={` bg-aboutbg bg-cover`}>
             {/* <img src={aboutbg} alt="" className=" absolute  " /> */}
             <div className='bg-dark dark:text-white relative top-[250px] md:top-[350px] xl:top-[450px] text-center z-10 h-[70vh]'>
              
